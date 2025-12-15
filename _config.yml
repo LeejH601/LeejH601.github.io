@@ -1,3 +1,12 @@
-theme: jekyll-theme-minimal
-title: LEE JIHYUNG's homepage
-description: Bookmark this to keep an eye on my project updates!
+# Build settings
+
+port: 4000
+markdown:  kramdown
+permalink: /:title
+plugins:   [jekyll-sitemap, jekyll-feed,  jekyll-seo-tag]
+
+# Customise atom feed settings (this is where Jekyll-Feed gets configuration information)
+
+title:		   "Portfolio Jekyll Theme"
+description: "Powered by Jekyll and GitHub Pages"
+author:      "Paul Le"
