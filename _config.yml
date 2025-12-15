@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Build settings
 
 port: 4000
@@ -11,3 +12,8 @@ url: "https://LeejH601.github.io"
 title:		   "LEE JIHYUNG's PortPolio"
 description: "Powered by Jekyll and GitHub Pages"
 author:      "LEE JIHYUNG"
+=======
+theme: jekyll-theme-minimal
+title: LEE JIHYUNG's homepage
+description: Bookmark this to keep an eye on my project updates!
+>>>>>>> parent of 9b54e07 (Portfolio Jekyll Theme 적용)
