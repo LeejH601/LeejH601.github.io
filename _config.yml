@@ -7,6 +7,7 @@ plugins:   [jekyll-sitemap, jekyll-feed,  jekyll-seo-tag]
 
 # Customise atom feed settings (this is where Jekyll-Feed gets configuration information)
 
-title:		   "Portfolio Jekyll Theme"
+url: "https://LeejH601.github.io"
+title:		   "LEE JIHYUNG's PortPolio"
 description: "Powered by Jekyll and GitHub Pages"
-author:      "Paul Le"
+author:      "LEE JIHYUNG"
