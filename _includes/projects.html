@@ -1,13 +1,75 @@
-<section>
-  <div class="project-container">
-    {% for project in site.data.settings.projects %}
-      <a href="{{ site.github.url }}/projects/{{ project.url }}">
-        <div class="project-unit" data-folder="{{ site.github.url }}/projects/{{ project.url }}" style="background-image: url({{ site.github.url }}/assets/img/projects/{{ project.url }}/thumbnail.jpg)">
-          <div class="project-overlay">
-            <strong>{{ project.name }} <i class="fa fa-arrow-right" aria-hidden="true"></i></strong>
+{% assign projects = site.data.data.projects %}
+{% if projects %}
+<section class="section projects-section">
+
+  <h2 class="section-title">
+    <span class="fa-stack fa-xs">
+      <i class="fas fa-circle fa-stack-2x"></i>
+      <i class="fas fa-archive fa-stack-1x fa-inverse"></i>
+    </span>
+    {{ projects.title }}
+  </h2>
+
+  {% if projects.intro %}
+  <div class="intro">
+      <p>{{ projects.intro }}</p>
+  </div><!--//intro-->
+  {% endif %}
+
+  {% for project in projects.assignments %}
+    <div class="item">
+
+      <span class="project-title">
+      {% if project.link %}
+        <i class="fas fa-link project-link-icon"></i>
+        <a href="{{ project.link }}" target="_blank" rel="noopener">
+          {{ project.title }}
+        </a>
+        {% else %}
+        {{ project.title }}
+        {% endif %}
+      </span>
+
+      {% if project.tagline %}
+      - <span class="project-tagline">{{ project.tagline }}</span>
+      {% endif %}
+
+      {% if project.period %}
+      <span class="project-period">
+        {{ project.period }})
+      </span>
+      {% endif %}
+
+      <!-- Description -->
+      {% if project.description %}
+      <div class="project-description">
+        <p>{{ project.description }}</p>
+      </div>
+      {% endif %}
+
+      <!-- What did I do -->
+      {% if project.responsibilities %}
+      <div class="project-responsibilities">
+        {% for item in project.responsibilities %}
+        <div class="responsibility-item">
+
+          <div class="responsibility-title">
+            ▸ {{ item.title }}
           </div>
+
+          {% if item.details %}
+          <div class="responsibility-details">
+            {{ item.details }}
+          </div>
+          {% endif %}
+
         </div>
-      </a>
-    {% endfor %}
-  </div>
-</section>
+        {% endfor %}
+      </div>
+      {% endif %}
+
+    </div><!--//item-->
+  {% endfor %}
+
+</section><!--//section-->
+{% endif %}

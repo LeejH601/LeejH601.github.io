@@ -1,0 +1,39 @@
+---
+
+---
+
+@charset "utf-8";
+
+
+// define variable with front matter
+{% if site.data.data.sidebar.position == 'left' %}
+$resume-order: 2;
+$sidebar-order: 1;
+{% else %}
+$resume-order: 1;
+$sidebar-order: 2;
+{% endif %}
+
+.project-responsibilities {
+  margin-top: 12px;
+}
+
+.responsibility-item {
+  margin-top: 12px;
+}
+
+.responsibility-title {
+  margin-left: 6px;      /* ▸ 앞 여백 */
+  margin-bottom: 6px;
+  font-weight: 600;
+}
+
+.responsibility-details {
+  margin-left: 24px;     /* 본문 들여쓰기 */
+  margin-top: 6px;
+  line-height: 1.65;
+  white-space: normal;
+}
+
+@import "skins/{{ site.theme_skin | default: 'blue' }}"; // skin
+@import "default"; // main partials
