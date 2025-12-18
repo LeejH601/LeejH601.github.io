@@ -130,6 +130,7 @@ projects:
   - title: Material 기반 렌더링 구조 도입
     tagline: 이지로보틱스 2025.3 ~ 2025.5
     description: "Shader 바인딩과 리소스 바인딩은 순차적으로 수행하던 기존 구조를 Material 단위로 처리될 수 있도록 구조 개선을 진행했습니다."
+    link: _projects/material.md
     responsibilities: 
       - title: 수행 업무
         details: >

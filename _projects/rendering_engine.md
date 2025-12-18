@@ -7,6 +7,7 @@ tech:
   - C++
   - OpenGL
   - GLSL
+  - Windows API
 ---
 
 # 개요
@@ -63,4 +64,6 @@ Driver는 OpenGL API 호출 및 렌더링 작업에만 집중하도록 책임을
 # 사용 기술
 - C++20
 - OpenGL
+- GLSL
 - 자체 RHI 추상화 계층
+- Windows API
