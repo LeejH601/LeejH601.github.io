@@ -20,13 +20,25 @@
     <div class="item">
 
       <span class="project-title">
-      {% if project.link %}
-        <i class="fas fa-link project-link-icon"></i>
-        <a href="{{ project.link }}" target="_blank" rel="noopener">
-          {{ project.title }}
-        </a>
+        {% if project.link %}
+          {% comment %} 
+            1. 먼저 site.projects 콜렉션에서 해당 경로가 있는지 찾아봅니다.
+          {% endcomment %}
+          {% assign internal_doc = site.projects | where: "path", project.link | first %}
+
+          {% if internal_doc %}
+            <i class="fas fa-file-alt project-link-icon"></i>
+            <a href="{{ internal_doc.url | relative_url }}">
+              {{ project.title }}
+            </a>
+          {% else %}
+            <i class="fas fa-link project-link-icon"></i>
+            <a href="{{ project.link }}" target="_blank" rel="noopener">
+              {{ project.title }}
+            </a>
+          {% endif %}
         {% else %}
-        {{ project.title }}
+          {{ project.title }}
         {% endif %}
       </span>
 

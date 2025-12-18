@@ -31,6 +31,11 @@ compress_html: # - http://jch.penibelst.de/
   ignore:
     envs: development
 
+collections:
+  projects:
+    output: true
+    permalink: _projects/:name
+
 # Development Settings
 port: 4000
 host: 0.0.0.0

@@ -104,6 +104,7 @@ projects:
   - title: 멀티 백엔드 렌더링 엔진 개발
     tagline: 이지로보틱스 2024.7 ~ 2025.7
     description: "최신 렌더링 API인 DirectX12와 Vulkan 등을 도입하고, 최신 렌더링 기술을 도입하기 위해 멀티 백엔드를 지원하는 렌더링 엔진 라이브러리 개발을 수행했습니다."
+    link: _projects/rendering_engine.md
     responsibilities: 
       - title: 수행 업무
         details: >

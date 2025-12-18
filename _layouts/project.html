@@ -1,0 +1,35 @@
+---
+layout: default
+---
+<article class="project-detail-container" style="max-width: 800px; margin: 0 auto; padding: 20px;">
+  <header style="margin-bottom: 40px; border-bottom: 2px solid #eee; padding-bottom: 20px;">
+    <h1 style="font-size: 2.5rem; color: #333;">{{ page.title }}</h1>
+    <p style="color: #666; font-size: 1.1rem;">📅 기간: {{ page.period }}</p>
+    {% if page.tech_stack %}
+    <div style="margin-top: 10px;">
+      <strong>기술 스택:</strong>
+      {% for tech in page.tech_stack %}
+        <span style="background: #f0f0f0; padding: 3px 8px; border-radius: 4px; margin-right: 5px; font-size: 0.9rem;">{{ tech }}</span>
+      {% endfor %}
+    </div>
+    {% endif %}
+  </header>
+
+  <div class="project-content" style="line-height: 1.8; color: #444;">
+    {{ content }}
+  </div>
+
+  <footer class="no-print" style="margin-top: 60px; padding-top: 20px; border-top: 1px solid #eee;">
+    <a href="{{ '/' | relative_url }}" style="text-decoration: none; color: #007bff; font-weight: bold;">
+      ← 이력서 메인으로 돌아가기
+    </a>
+  </footer>
+</article>
+
+<style>
+/* PDF 인쇄 시 '돌아가기' 버튼 숨기기 */
+@media print {
+  .no-print { display: none; }
+  .project-detail-container { padding: 0; }
+}
+</style>
