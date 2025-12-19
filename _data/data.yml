@@ -160,6 +160,7 @@ projects:
   - title: 드로우 파이프라인 개선
     tagline: 이지로보틱스 2025.8 ~ 2025.10
     description: "외부 프로그램 구조에 의존성이 없으며 다양한 렌더링 요소에 대해서도 제네릭한 동작을 수행하는 렌더러를 개발하는 업무를 수행했습니다."
+    link: _projects/draw_pipeline.md
     responsibilities: 
       - title: 수행 업무
         details: >
