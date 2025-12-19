@@ -36,6 +36,13 @@ collections:
     output: true
     permalink: _projects/:name
 
+analytics:
+  provider: "google-gtag"
+
+  google:
+    tracking_id: "G-1GVDD78P94"
+
+
 # Development Settings
 port: 4000
 host: 0.0.0.0
