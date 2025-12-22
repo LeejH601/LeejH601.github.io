@@ -10,13 +10,13 @@ tech:
   - Windows API
 ---
 
-# 개요
+### 개요
 전역으로 생성·관리되던 Shader–ShaderManager 구조를
 Material–MaterialInstance 구조로 전환하여
 렌더링 파이프라인 상태 관리성을 향상시키고, 전반적인 파이프라인 구조를 개선했습니다.
 <br><br>
 
-# 요구
+### 요구
 - 기존 Shader는 쉐이더 프로그램 바인딩과 uniform 변수 스트리밍만을 담당하고,
 파이프라인 상태(Depth, Blend 등)는 외부에서 직접 설정해야 하는 구조였습니다.<br>
 이로 인해 렌더링 코드가 상태 설정 순서에 강하게 의존하게 되었고,
@@ -30,13 +30,13 @@ Material–MaterialInstance 구조로 전환하여
 유지보수성에 어려움이 있었습니다.
 <br><br>
 
-# 수행 업무
+### 수행 업무
 - Filament의 Material–MaterialInstance 구조를 분석하고 이를 기반으로 구조를 구현·적용
 - ShaderManager를 대체하는 Material 관리 객체 개발
 - Shader 프로그램과 MaterialPackage를 통합 관리하는 기능 개발
 <br><br>
 
-# 문제
+### 문제
 - Filament의 Material–MaterialInstance 구조 자체는 유의미했으나,
   쉐이더 코드와 Material Package를 관리하는 방식까지 그대로 도입하기에는
   빌드 파이프라인 복잡도와 신규 기능 추가 비용이 과도하다는 문제가 있었습니다.
@@ -74,7 +74,7 @@ Material 또한 동일한 방식으로 lib와 resources.h / .c 형태로 제공�
 신규 기능 개발 비용이 크고 올바른 사용을 위한 추가적인 학습 및 교육이 필요하다는 문제가 있었습니다.
 <br><br>
 
-# 해결방법
+### 해결방법
 - 쉐이더 코드 관리는 기존 방식을 유지하되,
 Material Package를 소스 코드 상에서 직접 정의하여 사용할 수 있도록 매크로 기반 구조를 도입했습니다.<br><br>
 MATERIAL_PARAMETER 매크로를 통해 Material에서 사용하는 uniform 데이터를 선언하고,
@@ -85,7 +85,7 @@ MATERIAL_PROPERTY 매크로를 통해 depth, blend 등의 파이프라인 상태
 Material 생성 시 이를 전달받아 사용하도록 구현했습니다.
 <br><br>
 
-# 설계 관점
+### 설계 관점
 - PSO(Pipeline State Object) 개념을 염두에 둔 Material 구조를 설계하여,
   DirectX 12 및 Vulkan 파이프라인 모델로의 확장을 고려<br><br>
 - PSO는 일반적으로 생성 이후 변경이 어려운 객체이지만,
@@ -94,7 +94,7 @@ Material 생성 시 이를 전달받아 사용하도록 구현했습니다.
 - 실제 PSO 객체 생성 및 캐싱은 각 Driver 레벨에서 담당하도록 하여,
   조직 규모상 코드 레벨의 잦은 수정과 실험을 수용할 수 있는 구조를 선택<br><br>
 
-# 성과
+### 성과
 - 렌더링 구조를 Material 중심으로 재구성하여
 쉐이더 프로그램과 파이프라인 상태를 일관성 있게 관리할 수 있는 구조를 확립
 <br><br>
@@ -103,7 +103,7 @@ Material 단위로 상태를 분리함으로써 근본적으로 해결
 <br><br>
 
 
-# 향후 계획
+### 향후 계획
 - 공용으로 사용되는 구조체 및 함수들을 분리하여
 Filament와 유사한 형태의 shaders.lib 구조로 관리
 <br><br>
@@ -112,7 +112,7 @@ Filament와 유사한 형태의 shaders.lib 구조로 관리
   유연하게 결합하는 구조 검토
 <br><br>
 
-# 사용 기술
+### 사용 기술
 - C++20
 - OpenGL
 - GLSL

@@ -242,17 +242,31 @@ projects:
           <br><br>
 
 skills:
-  title: Skills &amp; Proficiency
+  title: Skills
+  groups:
+    - category: "Core Languages"
+      items: ["Modern C++ (STL)"]
+      
+    - category: "Graphics APIs"
+      items: ["OpenGL", "DirectX 12"]
 
-  toolset:
-  - name: C++
-    level: 80%
+    - category: "Shader Languages"
+      items: ["GLSL", "HLSL", "Slang"]
 
-  - name: OpenGL
-    level: 80%
+    - category: "Rendering Technics"
+      items: ["PBR (Physically Based Rendering)", "Real-time Rendering", "Global Illumination"]
 
-  - name: DirectX12
-    level: 70%
+    - category: "Architecture & Design"
+      items: ["Rendering Pipeline Design", "FrameGraph-based Architecture", "Data-Oriented Design"]
+
+    - category: "Analysis & Debugging"
+      items: ["NVIDIA Nsight", "RenderDoc", "GPU Profiling"]
+
+    - category: "Version Control"
+      items: ["TortoiseSVN", "Git"]
+
+
+  
 
 footer: >
   Designed with <i class="fas fa-heart"></i> by <a href="http://themes.3rdwavemedia.com" target="_blank" rel="nofollow">Xiaoying Riley</a>
