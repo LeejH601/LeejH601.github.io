@@ -39,7 +39,7 @@ GDC 2017 「FrameGraph: Extensible Rendering Architecture in Frostbite」 세션
 
 
 ### 해결방법
-- 디퍼드 환경에서 AA 품질 개선을 위한 추가 연구·개발은 비용 대비 효과가 제한적이라 판단하여, MSAA를 유지하되 렌더링 파이프라인 구조를 변경하는 방향으로 접근<br><br>
+- 디퍼드 환경에서 AA 품질 개선을 위한 추가 연구 및 개발은 비용 대비 효과가 제한적이라 판단하여, MSAA를 유지하되 렌더링 파이프라인 구조를 변경하는 방향으로 접근<br><br>
 - 프로그램 특성상 다수의 동적 광원을 사용하는 경우가 드물다는 점에 착안하여, Geometry 패스를 단순 G-buffer 생성 단계가 아닌 Forward Lighting & Geometry 패스로 변경<br>
   해당 패스에서 MSAA 텍스처인 Direct, Specular, Indirect, Indirect Specular 버퍼에 조명 결과를 직접 저장하고, 이후 후처리 패스에서 이를 합성하도록 구성<br><br>
 - SSAO는 MSAA 텍스처와 구조적으로 결합하기 어려워, 최종 합성 전 단계에서 FXAA를 적용하여 과도한 Aliasing만 보정하도록 처리<br><br>

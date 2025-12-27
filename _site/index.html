@@ -311,10 +311,6 @@
 
       <!-- Description -->
       
-      <div class="project-description">
-        <p>OpenGL 중심의 기존 렌더링 구조를 재설계하여, DirectX 12 및 Vulkan 등 최신 렌더링 API로의 확장을 전제로 한 멀티 백엔드 렌더링 엔진 라이브러리를 개발했습니다.</p>
-      </div>
-      
 
       <!-- What did I do -->
       
@@ -323,12 +319,12 @@
         <div class="responsibility-item">
 
           <div class="responsibility-title">
-            ▸ 수행 업무
+            ▸ 성과
           </div>
 
           
           <div class="responsibility-details">
-            - 레거시 OpenGL Immediate Mode 제거 및 Core Profile 기반 렌더링 구조로 전환 <br><br> - OpenGL을 1차 타겟으로 한 멀티 백엔드 렌더링 엔진 아키텍처 설계 및 구현 <br><br> - API 종속 로직을 분리하기 위한 Driver / RHI 추상화 계층 설계 <br><br>
+            - OpenGL API 의존성을 낮추고 최신 API 도입 시 렌더링 로직 수정을 최소화하는 구조 구축<br><br>
 
           </div>
           
@@ -338,12 +334,12 @@
         <div class="responsibility-item">
 
           <div class="responsibility-title">
-            ▸ 주요 성과
+            ▸ 역할
           </div>
 
           
           <div class="responsibility-details">
-            - Google Filament 렌더링 엔진의 구조를 분석하고 이를 참고하여 멀티 백엔드 확장을 고려한 렌더링 엔진 구조 설계 <br><br> - OpenGL API 실구현체인 OpenGLDriver 개발을 통해 OpenGL과 상위 렌더링 로직 간의 의존성 제거 <br><br> - OpenGLDriver 안정화 작업을 통해 향후 DirectX 12 / Vulkan 도입을 위한 구조적 기반 확보 <br><br>
+            - 렌더링 API 추상화 구조 설계 <br><br> - Driver 기반 렌더링 구조 초기 구현 및 OpenGL Driver 구현 <br><br> - 팀원과 협력하여 레거시 OpenGL 코드 전환 및 안정화 <br><br>
 
           </div>
           
@@ -394,10 +390,6 @@
 
       <!-- Description -->
       
-      <div class="project-description">
-        <p>Shader 바인딩과 파이프라인 상태 설정이 분리되어 있던 기존 구조를 개선하여, Material 단위로 쉐이더와 파이프라인 상태를 통합 관리하는 Material 기반 렌더링 구조를 설계·구현했습니다.</p>
-      </div>
-      
 
       <!-- What did I do -->
       
@@ -406,12 +398,12 @@
         <div class="responsibility-item">
 
           <div class="responsibility-title">
-            ▸ 수행 업무
+            ▸ 성과
           </div>
 
           
           <div class="responsibility-details">
-            - Material / MaterialInstance 구조 설계 및 구현 <br><br> - Shader 프로그램, Material Uniform, Frame Uniform을 통합 관리하는 렌더링 구조 개발 <br><br> - MaterialPackage, 관리 객체 등 Material 생성을 지원하는 데이터 구조 설계 <br><br> - 기존 Immediate 방식의 드로우 코드를 Material 기반 구조로 리팩토링 <br><br>
+            - 전역 Shader가 아닌 MaterialInstance 별로 쉐이더 리소스와 상태를 관리하여 렌더링 작업 간 상태 오염 문제를 완화 <br><br> - 파이프라인 상태를 Material 단위로 관리하도록 변경하여 DirectX 12 / Vulkan의 PSO 모델과 정합성을 갖는 구조 확보 <br><br>
 
           </div>
           
@@ -421,12 +413,12 @@
         <div class="responsibility-item">
 
           <div class="responsibility-title">
-            ▸ 주요 성과
+            ▸ 역할
           </div>
 
           
           <div class="responsibility-details">
-            - Filament의 Material 및 렌더링 파이프라인 구조를 분석하고, 사내 엔진 환경에 맞게 단순화·변형하여 Material 시스템 적용 <br><br> - View / Projection 등 공용 데이터를 Frame Uniform Buffer로 통합하여 반복적인 glUniform 호출을 제거하고 관리 구조 개선 <br><br> - Blend, Depth 등 파이프라인 상태를 Material 단위로 관리하도록 변경하여 DirectX 12 / Vulkan의 PSO 모델과 정합성을 갖는 구조 확보 <br><br>
+            - Material / MaterialInstance 구조 설계 및 구현 <br><br> - MaterialPackage, Parser 등 Material 생성을 지원하는 데이터 구조 설계 <br><br> - 팀원과 협력하여 기존 Immediate 방식의 드로우 코드를 Material 기반 구조로 전환 <br><br>
 
           </div>
           
@@ -477,10 +469,6 @@
 
       <!-- Description -->
       
-      <div class="project-description">
-        <p>Material 기반 파이프라인에 맞춰 기존 오브젝트 중심 렌더러 구조를 제거하고, 외부 프로그램 구조에 의존하지 않는 Command 기반 렌더러 파이프라인을 설계·구현했습니다.</p>
-      </div>
-      
 
       <!-- What did I do -->
       
@@ -489,12 +477,12 @@
         <div class="responsibility-item">
 
           <div class="responsibility-title">
-            ▸ 수행 업무
+            ▸ 성과
           </div>
 
           
           <div class="responsibility-details">
-            - Command 단위로 동작하는 범용 Renderer 아키텍처 설계 및 구현 <br><br> - 오브젝트 유형별 렌더러(Solid, Wire 등) 제거 및 렌더링 흐름 통합 <br><br> - 인스턴싱 렌더링 기능을 커맨드 생성 단계로 통합 <br><br>
+            - 오브젝트 유형에 상관없이 공통 적용 가능한 렌더러 구조를 통해 렌더링 흐름의 일관성 확보 <br><br> - Tagged Parameter를 통해 잘못된 커맨드 조합을 컴파일 타임에 차단하여 런타임 안정성 향상 <br><br>
 
           </div>
           
@@ -504,12 +492,12 @@
         <div class="responsibility-item">
 
           <div class="responsibility-title">
-            ▸ 주요 성과
+            ▸ 역할
           </div>
 
           
           <div class="responsibility-details">
-            - 로봇 모델, 차체 형상, 2D 레이아웃 선, 포인트 클라우드 등 다양한 렌더링 요소에 공통 적용 가능한 렌더러 구조 확립 <br><br> - 커맨드 단위 인스턴싱 지원을 통해 기존 InstanceRenderer의 기능을 통합 및 중복 구조 제거 <br><br> - C++20 Template / Concept 기반 Tagged Parameter 방식을 도입하여 잘못된 커맨드 조합을 컴파일 타임에 차단하고 API 사용성 향상 <br><br>
+            - Command 단위로 동작하는 범용 Renderer 아키텍처 설계 및 구현 <br><br> - 팀원과 협력하여 오브젝트 유형별 렌더러(Solid, Wire 등) 제거 및 렌더링 흐름 통합 및 이슈 대응 <br><br>
 
           </div>
           
@@ -560,10 +548,6 @@
 
       <!-- Description -->
       
-      <div class="project-description">
-        <p>자사 프로그램의 렌더링 품질 개선 요구에 대응하기 위해 PBR 기반 렌더링 기법과 FrameGraph 구조를 도입하고, 디퍼드 렌더링 파이프라인을 사내 환경에 맞게 설계·적용했습니다.</p>
-      </div>
-      
 
       <!-- What did I do -->
       
@@ -572,12 +556,12 @@
         <div class="responsibility-item">
 
           <div class="responsibility-title">
-            ▸ 수행 업무
+            ▸ 성과
           </div>
 
           
           <div class="responsibility-details">
-            - PBR(Physically Based Rendering), IBL(Image-Based Lighting), SSAO(Screen Space Ambient Occlusion) 기법 구현 및 적용 <br><br> - GDC FrameGraph 발표 자료 및 Filament 구조 분석을 기반으로 FrameGraph 시스템 설계 및 시범 적용 <br><br> - 디퍼드 렌더링 파이프라인 설계 및 기존 렌더링 구조와 병행 적용 <br><br>
+            - 보다 사실적인 그래픽을 제공하여 사내 홍보팀의 홍보 자료 제작에 기여 <br><br> - FrameGraph 기반 렌더 패스 관리 구조를 도입하여 렌더링 옵션 전환 및 유지보수가 용이한 파이프라인 구축 <br><br>
 
           </div>
           
@@ -587,12 +571,12 @@
         <div class="responsibility-item">
 
           <div class="responsibility-title">
-            ▸ 주요 성과
+            ▸ 역할
           </div>
 
           
           <div class="responsibility-details">
-            - PBR, IBL, SSAO를 디퍼드 렌더링 환경에서 구축하여 고품질 렌더링 옵션으로 제공 <br><br> - MSAA 제약이 있는 디퍼드 환경에서 Forward Lighting & Geometry 패스를 혼합한 구조를 설계하여 품질과 성능의 균형을 확보 <br><br> - FrameGraph 기반 렌더 패스 관리 구조를 도입하여 렌더링 옵션 전환 및 유지보수가 용이한 파이프라인 구축 <br><br>
+            - PBR(Physically Based Rendering), IBL(Image-Based Lighting), SSAO(Screen Space Ambient Occlusion) 기법 구현 및 적용 <br><br> - GDC FrameGraph 발표 자료 및 Filament 구조 분석을 기반으로 FrameGraph 시스템 설계 및 시범 적용 <br><br> - 디퍼드 렌더링 파이프라인 설계 및 기존 렌더링 구조와 병행 적용 <br><br>
 
           </div>
           
@@ -644,7 +628,7 @@
       <!-- Description -->
       
       <div class="project-description">
-        <p>대학 졸업 작품 프로젝트로, 게임의 타격감에 대한 효율 향상 연구(문성준, 2012)에서 제안한 2D 격투 게임 기반의 타격감 시뮬레이터를 3D 타격감 시뮬레이터로 구현 및 확장하여 나만의 타격감을 만들 수 있는 시스템을 구성하고, 이를 테스트할 수 있는 게임을 제작했습니다</p>
+        <p>대학 졸업 작품 프로젝트로, 게임의 타격감에 대한 효율 향상 연구(문성준, 2012)에서 제안한 2D 격투 게임 기반의 타격감 시뮬레이터를 3D 타격감 시뮬레이터로 구현 및 확장하여 나만의 타격감을 만들 수 있는 시스템을 구성하고, 이를 테스트할 수 있는 게임을 제작했습니다<br></p>
       </div>
       
 
@@ -670,7 +654,7 @@
         <div class="responsibility-item">
 
           <div class="responsibility-title">
-            ▸ 주요 성과
+            ▸ 성과
           </div>
 
           

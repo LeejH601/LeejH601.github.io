@@ -11,7 +11,7 @@ tech:
 ---
 
 ### 개요
-전역으로 생성·관리되던 Shader–ShaderManager 구조를
+전역으로 생성 및 관리되던 Shader–ShaderManager 구조를
 Material–MaterialInstance 구조로 전환하여
 렌더링 파이프라인 상태 관리성을 향상시키고, 전반적인 파이프라인 구조를 개선했습니다.
 <br><br>
@@ -31,7 +31,7 @@ Material–MaterialInstance 구조로 전환하여
 <br><br>
 
 ### 수행 업무
-- Filament의 Material–MaterialInstance 구조를 분석하고 이를 기반으로 구조를 구현·적용
+- Filament의 Material–MaterialInstance 구조를 분석하고 이를 기반으로 구조를 구현 및 적용
 - ShaderManager를 대체하는 Material 관리 객체 개발
 - Shader 프로그램과 MaterialPackage를 통합 관리하는 기능 개발
 <br><br>
@@ -77,10 +77,11 @@ Material 또한 동일한 방식으로 lib와 resources.h / .c 형태로 제공�
 ### 해결방법
 - 쉐이더 코드 관리는 기존 방식을 유지하되,
 Material Package를 소스 코드 상에서 직접 정의하여 사용할 수 있도록 매크로 기반 구조를 도입했습니다.<br><br>
+이 매크로 기반 정의는 Unreal Engine의 ShaderParameter를 정의하는 매크로 기반 기능에서 영감을 받아 설계했습니다.<br><br>
 MATERIAL_PARAMETER 매크로를 통해 Material에서 사용하는 uniform 데이터를 선언하고,
 MATERIAL_PROPERTY 매크로를 통해 depth, blend 등의 파이프라인 상태를 정의하도록 구성했습니다.
 <br><br>
-- 쉐이더 코드는 기존에 윈도우 리소스(Window Resource)로 등록·관리되고 있었기 때문에,
+- 쉐이더 코드는 기존에 윈도우 리소스(Window Resource)로 등록 및 관리되고 있었기 때문에,
 해당 리소스 ID를 제공하도록 구성하고,
 Material 생성 시 이를 전달받아 사용하도록 구현했습니다.
 <br><br>
@@ -99,7 +100,7 @@ Material 생성 시 이를 전달받아 사용하도록 구현했습니다.
 쉐이더 프로그램과 파이프라인 상태를 일관성 있게 관리할 수 있는 구조를 확립
 <br><br>
 - 전역 Shader 객체로 인해 발생하던 상태 오염 문제를
-Material 단위로 상태를 분리함으로써 근본적으로 해결
+Material 단위로 상태를 분리함으로써 문제 완화
 <br><br>
 
 

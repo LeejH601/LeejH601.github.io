@@ -12,7 +12,7 @@ tech:
 ### 개요
 오브젝트 유형별로 분리되어 사용되던 기존 렌더러 구조의 한계를 개선하고자,
 외부 프로그램 구조에 의존하지 않으면서도 다양한 렌더링 요소를 범용적으로 처리할 수 있는
-Command 기반 렌더러 파이프라인을 설계·구현했습니다.
+Command 기반 렌더러 파이프라인을 설계 및 구현했습니다.
 
 이를 통해 렌더링 호출 흐름을 단순화하고,
 Material 기반 파이프라인과 자연스럽게 연계되는 구조를 구축하는 것을 목표로 했습니다.
@@ -106,7 +106,7 @@ Material 기반 파이프라인과 자연스럽게 연계되는 구조를 구축
     tag::tri::material(mi),
     tag::tri::renderprimitive(rp),
     tag::tri::transform(world),
-    tag::tri::width(ptSize) // Triangle에 유효하지 않은 파라미터
+    tag::tri::width(width) // Triangle에 유효하지 않은 파라미터
   );
   ```
 
